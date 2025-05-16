@@ -25,8 +25,9 @@ ttk.Label(mainframe, textvariable=meters).grid(column=2, row=2, sticky=(W, E))
 
 ttk.Button(mainframe, text="Calcular", command=calculate).grid(column=3, row=3, sticky=W)
 
-ttk.Label(mainframe, text="Pies").grid(column=3, row=1, sticky=W)
-ttk.Label(mainframe, text="es equivalente a").grid(column=1, row=2, sticky=E)
+ttk.Label(mainframe, text="Ingrese la cantidad de pies: ").grid(column=1, row=1, sticky=W)
+# ttk.Label(mainframe, text="Pies").grid(column=3, row=1, sticky=W)
+ttk.Label(mainframe, text="es equivalente a: ").grid(column=1, row=2, sticky=E)
 ttk.Label(mainframe, text="Metros").grid(column=3, row=2, sticky=W)
 
 for child in mainframe.winfo_children(): 
