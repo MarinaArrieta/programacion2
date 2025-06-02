@@ -1,7 +1,6 @@
-class Paciente:
-    def __init__(self, fecha_ingreso, fecha_egreso, afeccion, medico, observaciones):
-        self.fecha_ingreso = fecha_ingreso
-        self.fecha_egreso = fecha_egreso
+class HistoriaClinica:
+    def __init__(self, fecha, afeccion, medico, observaciones):
+        self.fecha = fecha  # Formato: 'YYYY-MM-DD'
         self.afeccion = afeccion
-        self.medico = medico
+        self.medico = medico  # Instancia de Medico
         self.observaciones = observaciones

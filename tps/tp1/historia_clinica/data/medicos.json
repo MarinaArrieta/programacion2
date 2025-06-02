@@ -1,0 +1,14 @@
+[
+  {
+    "id": 101,
+    "apellido": "Ramírez",
+    "nombre": "Laura",
+    "especialidad": "Clínica Médica"
+  },
+  {
+    "id": 102,
+    "apellido": "Fernández",
+    "nombre": "Pablo",
+    "especialidad": "Otorrinolaringología"
+  }
+]

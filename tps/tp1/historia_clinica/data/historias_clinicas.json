@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "documento": "12345678",
+    "apellido": "González",
+    "nombre": "María",
+    "fechaNacimiento": "1990-04-15",
+    "nacionalidad": "Argentina",
+    "historiasClinicas": [
+      {
+        "fecha": "2024-10-05",
+        "afeccion": "Hipertensión arterial",
+        "medicoId": 101,
+        "observaciones": "Se indicó control de presión semanal y dieta baja en sodio."
+      },
+      {
+        "fecha": "2025-02-20",
+        "afeccion": "Gripe estacional",
+        "medicoId": 102,
+        "observaciones": "Reposo por 5 días y paracetamol cada 8 horas."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "documento": "87654321",
+    "apellido": "López",
+    "nombre": "Juan",
+    "fechaNacimiento": "1985-09-30",
+    "nacionalidad": "Uruguaya",
+    "historiasClinicas": [
+      {
+        "fecha": "2025-03-01",
+        "afeccion": "Lumbalgia",
+        "medicoId": 101,
+        "observaciones": "Recomendada kinesiología y analgésicos."
+      }
+    ]
+  }
+]

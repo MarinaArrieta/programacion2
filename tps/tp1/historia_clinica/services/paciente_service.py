@@ -1,20 +1,9 @@
-import json
-import os
+from utils.file_manager import cargar_datos, guardar_datos
 
-DATA_FILE = 'data/pacientes.json'
-
-def cargar_pacientes():
-    if not os.path.exists(DATA_FILE):
-        return []
-    with open(DATA_FILE, 'r', encoding='utf-8') as f:
-        return json.load(f)
-
-def guardar_pacientes(pacientes):
-    with open(DATA_FILE, 'w', encoding='utf-8') as f:
-        json.dump(pacientes, f, indent=2, ensure_ascii=False)
+DATA_FILE = 'pacientes.json'
 
 def registrar_paciente(documento, apellido, nombre, fecha_nacimiento, nacionalidad):
-    pacientes = cargar_pacientes()
+    pacientes = cargar_datos(DATA_FILE)
 
     nuevo_paciente = {
         "numero_historia": len(pacientes) + 1,
@@ -26,26 +15,18 @@ def registrar_paciente(documento, apellido, nombre, fecha_nacimiento, nacionalid
     }
 
     pacientes.append(nuevo_paciente)
-    guardar_pacientes(pacientes)
+    guardar_datos(DATA_FILE, pacientes)
     print(f"Paciente {nombre} {apellido} registrado exitosamente.")
     return nuevo_paciente
 
 def eliminar_paciente(documento):
-    # Cargar los pacientes desde el archivo JSON
-    pacientes = cargar_pacientes()
+    pacientes = cargar_datos(DATA_FILE)
+    pacientes_filtrados = [p for p in pacientes if p['documento'] != documento]
 
-    # Buscar el paciente por documento
-    paciente_a_eliminar = None
-    for paciente in pacientes:
-        if paciente['documento'] == documento:
-            paciente_a_eliminar = paciente
-            break
-
-    if paciente_a_eliminar:
-        # Eliminar el paciente de la lista
-        pacientes.remove(paciente_a_eliminar)
-        # Guardar la lista actualizada en el archivo
-        guardar_pacientes(pacientes)
-        print(f"Paciente con documento {documento} eliminado exitosamente.")
-    else:
+    if len(pacientes_filtrados) == len(pacientes):
         print(f"No se encontró un paciente con documento {documento}.")
+        return False
+
+    guardar_datos(DATA_FILE, pacientes_filtrados)
+    print(f"Paciente con documento {documento} eliminado exitosamente.")
+    return True

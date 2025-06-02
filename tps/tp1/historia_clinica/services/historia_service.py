@@ -1,30 +1,19 @@
-import json
-import os
+from utils.file_manager import cargar_datos, guardar_datos
 
-DATA_FILE = 'data/historias_clinicas.json'
+DATA_FILE = 'historias_clinicas.json'
 
-def cargar_historias():
-    if not os.path.exists(DATA_FILE):
-        return []
-    with open(DATA_FILE, 'r', encoding='utf-8') as f:
-        return json.load(f)
+def agregar_historia(documento_paciente, fecha, enfermedad, medico, observaciones):
+    historias = cargar_datos(DATA_FILE)
 
-def guardar_historias(historias):
-    with open(DATA_FILE, 'w', encoding='utf-8') as f:
-        json.dump(historias, f, indent=2, ensure_ascii=False)
-
-def registrar_historia(fecha_ingreso, fecha_egreso, afeccion, medico, observaciones):
-    historias = cargar_historias()
-
-    nuevo_historia = {
-        "fecha_ingreso": fecha_ingreso,
-        "fecha_egreso": fecha_egreso,
-        "afeccion": afeccion,
+    nueva_historia = {
+        "documento_paciente": documento_paciente,
+        "fecha": fecha,
+        "enfermedad": enfermedad,
         "medico": medico,
-        "observaciones": observaciones,
+        "observaciones": observaciones
     }
 
-    historias.append(nuevo_historia)
-    guardar_historias(historias)
-    print(f"Historia, Medico: {medico} - afeccion: {afeccion} registrado exitosamente.")
-    return nuevo_historia
+    historias.append(nueva_historia)
+    guardar_datos(DATA_FILE, historias)
+    print(f"Historia clínica agregada para paciente {documento_paciente}.")
+    return nueva_historia
