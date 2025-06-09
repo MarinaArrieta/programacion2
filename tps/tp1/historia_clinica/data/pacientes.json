@@ -1,19 +1,26 @@
 [
-    {
-      "numero_historia": 1,
-      "documento": "12345678",
-      "apellido": "González",
-      "nombre": "María",
-      "fecha_nacimiento": "1990-05-14",
-      "nacionalidad": "Argentina"
-    },
-    {
-      "numero_historia": 2,
-      "documento": "87654321",
-      "apellido": "Pérez",
-      "nombre": "Juan",
-      "fecha_nacimiento": "1985-12-30",
-      "nacionalidad": "Uruguayo"
-    }
+  {
+    "numero_historia": 1,
+    "documento": "12345678",
+    "apellido": "González",
+    "nombre": "María",
+    "fecha_nacimiento": "1990-05-14",
+    "nacionalidad": "Argentina"
+  },
+  {
+    "numero_historia": 2,
+    "documento": "87654321",
+    "apellido": "Pérez",
+    "nombre": "Juan",
+    "fecha_nacimiento": "1985-12-30",
+    "nacionalidad": "Uruguayo"
+  },
+  {
+    "numero_historia": 3,
+    "documento": "23457987",
+    "apellido": "Juarez",
+    "nombre": "Walter",
+    "fecha_nacimiento": "1985-05-13",
+    "nacionalidad": "Argentino"
+  }
 ]
-  

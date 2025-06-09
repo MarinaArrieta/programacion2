@@ -1,5 +1,6 @@
 
-from services.historia_service import agregar_historia_clinica
+# from services.historia_service import agregar_historia_clinica
+from services.historia_service import agregar_historia
 
 def menu_historia():
     while True:
@@ -20,3 +21,6 @@ def menu_historia():
             break
         else:
             print("Opción no válida. Intente nuevamente.")
+
+if __name__ == "__main__":
+    menu_historia()

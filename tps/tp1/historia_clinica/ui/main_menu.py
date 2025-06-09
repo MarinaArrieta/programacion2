@@ -1,7 +1,7 @@
 import os
-from ui.paciente_menu import mostrar_menu_pacientes
-from ui.medico_menu import mostrar_menu_medicos
-from ui.historia_menu import mostrar_menu_historias
+from ui.paciente_menu import menu_paciente
+from ui.medico_menu import menu_medico
+from ui.historia_menu import menu_historia
 
 def limpiar_pantalla():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -18,11 +18,11 @@ def main_menu():
         opcion = input("Seleccione una opción: ")
 
         if opcion == '1':
-            mostrar_menu_pacientes()
+            menu_paciente()
         elif opcion == '2':
-            mostrar_menu_medicos()
+            menu_medico()
         elif opcion == '3':
-            mostrar_menu_historias()
+            menu_historia()
         elif opcion == '0':
             print("Saliendo del sistema...")
             break

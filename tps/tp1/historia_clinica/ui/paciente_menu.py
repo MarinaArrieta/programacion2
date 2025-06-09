@@ -1,4 +1,5 @@
-from services.paciente_service import registrar_paciente, eliminar_paciente, editar_paciente, buscar_paciente
+from services.paciente_service import registrar_paciente, eliminar_paciente
+# , editar_paciente, buscar_paciente
 
 def menu_paciente():
     while True:
@@ -19,31 +20,34 @@ def menu_paciente():
             nac = input("Nacionalidad: ")
             registrar_paciente(doc, ape, nom, fnac, nac)
 
-        elif opcion == '2':
-            doc = input("Documento del paciente a editar: ")
-            print("Deje en blanco para no modificar un campo")
-            ape = input("Nuevo apellido: ") or None
-            nom = input("Nuevo nombre: ") or None
-            fnac = input("Nueva fecha de nacimiento (YYYY-MM-DD): ") or None
-            nac = input("Nueva nacionalidad: ") or None
-            editar_paciente(doc, ape, nom, fnac, nac)
+        # elif opcion == '2':
+        #     doc = input("Documento del paciente a editar: ")
+        #     print("Deje en blanco para no modificar un campo")
+        #     ape = input("Nuevo apellido: ") or None
+        #     nom = input("Nuevo nombre: ") or None
+        #     fnac = input("Nueva fecha de nacimiento (YYYY-MM-DD): ") or None
+        #     nac = input("Nueva nacionalidad: ") or None
+        #     editar_paciente(doc, ape, nom, fnac, nac)
 
         elif opcion == '3':
             doc = input("Documento del paciente a eliminar: ")
             eliminar_paciente(doc)
 
-        elif opcion == '4':
-            print("\nBuscar por:")
-            print("1. Apellido y/o Nombre")
-            print("2. Rango de fechas de atención")
-            print("3. Enfermedad/afección")
-            print("4. Médico tratante")
-            print("5. Nacionalidad")
-            tipo = input("Opción de búsqueda: ")
-            buscar_paciente(tipo)
+        # elif opcion == '4':
+        #     print("\nBuscar por:")
+        #     print("1. Apellido y/o Nombre")
+        #     print("2. Rango de fechas de atención")
+        #     print("3. Enfermedad/afección")
+        #     print("4. Médico tratante")
+        #     print("5. Nacionalidad")
+        #     tipo = input("Opción de búsqueda: ")
+        #     buscar_paciente(tipo)
 
         elif opcion == '5':
             break
 
         else:
             print("Opción inválida. Intente nuevamente.")
+
+if __name__ == "__main__":
+    menu_paciente()

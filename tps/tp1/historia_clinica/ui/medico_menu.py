@@ -24,3 +24,6 @@ def menu_medico():
             break
         else:
             print("Opción no válida. Intente nuevamente.")
+
+if __name__ == "__main__":
+    menu_medico()
